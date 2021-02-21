@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="rover">
+
+  <link
+    name="CH">
+    <inertial>
+      <origin
+        xyz="-1.2577E-06 -4.0479E-21 0"
+        rpy="0 0 0" />
+      <mass
+        value="19.973" />
+      <inertia
+        ixx="0.49814"
+        ixy="1.0467E-16"
+        ixz="1.1843E-05"
+        iyy="0.94745"
+        iyz="1.5792E-17"
+        izz="1.3494" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.3"
+        rpy="0. 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sar/meshes/base_link.STL" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rover_sar/meshes/CH.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+<link
+    name="FW_r">
+ <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.18"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_fvisual">
+      <origin xyz="0. 0. 0.0" rpy="0 0 -1.5707 "/>
+      <geometry>
+	<mesh
+		filename="package://rover_sar/meshes/wheel.STL"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <mass value="0.5"/>
+      <cylinder_inertia m="0.5" r="0.15" h="0.18"/>
+      <inertia
+        ixx="0.0041625" ixy="0.0" ixz="0.0"
+        iyy="0.0041625" iyz="0.0"
+        izz="0.005625"/>
+    </inertial>  
+</link>
+
+<link
+    name="MW_r">
+<collision name="collision">
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.18"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_fvisual">
+      <origin xyz="0. 0. 0" rpy="0 0 -1.5707"/>
+      <geometry>
+	<mesh
+		filename="package://rover_sar/meshes/wheel.STL"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <mass value="0.5"/>
+      <cylinder_inertia m="0.5" r="0.15" h="0.18"/>
+      <inertia
+        ixx="0.0041625" ixy="0.0" ixz="0.0"
+        iyy="0.0041625" iyz="0.0"
+        izz="0.005625"/>
+    </inertial>
+  </link>
+
+<link
+    name="RW_r">
+ <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.18"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_fvisual">
+      <origin xyz="0. 0. 0" rpy="0 0 -1.5707"/>
+      <geometry>
+	<mesh
+		filename="package://rover_sar/meshes/wheel.STL"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <mass value="0.5"/>
+      <cylinder_inertia m="0.5" r="0.15" h="0.18"/>
+      <inertia
+        ixx="0.0041625" ixy="0.0" ixz="0.0"
+        iyy="0.0041625" iyz="0.0"
+        izz="0.005625"/>
+    </inertial>  
+</link>
+
+<link
+    name="FW_l">
+ <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.18"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_fvisual">
+      <origin xyz="0. -0. 0." rpy="0 0 1.5707"/>
+      <geometry>
+	<mesh
+		filename="package://rover_sar/meshes/wheel.STL"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <mass value="0.5"/>
+      <cylinder_inertia m="0.5" r="0.15" h="0.18"/>
+      <inertia
+        ixx="0.0041625" ixy="0.0" ixz="0.0"
+        iyy="0.0041625" iyz="0.0"
+        izz="0.005625"/>
+    </inertial>  
+</link>
+<link
+    name="MW_l">
+<collision name="collision">
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.18"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_fvisual">
+      <origin xyz="0. -0. 0." rpy="0 0 1.5707"/>
+      <geometry>
+	<mesh
+		filename="package://rover_sar/meshes/wheel.STL"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <mass value="0.5"/>
+      <cylinder_inertia m="0.5" r="0.15" h="0.18"/>
+      <inertia
+        ixx="0.0041625" ixy="0.0" ixz="0.0"
+        iyy="0.0041625" iyz="0.0"
+        izz="0.005625"/>
+    </inertial>  
+</link>
+
+<link
+    name="RW_l">
+ <collision name="collision">
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <geometry>
+        <cylinder radius="0.15" length="0.18"/>
+      </geometry>
+    </collision>
+    <visual name="right_wheel_fvisual">
+      <origin xyz="0. 0. 0." rpy="0 0 1.5707"/>
+      <geometry>
+	<mesh
+		filename="package://rover_sar/meshes/wheel.STL"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+      <mass value="0.5"/>
+      <cylinder_inertia m="0.5" r="0.15" h="0.18"/>
+      <inertia
+        ixx="0.0041625" ixy="0.0" ixz="0.0"
+        iyy="0.0041625" iyz="0.0"
+        izz="0.005625"/>
+    </inertial>  
+</link>
+
+  <joint
+    name="RB_RW_l"
+    type="continuous">
+    <origin
+      xyz="-0.5 0.3 0"
+      rpy="0 0 0.0" />
+    <parent
+      link="CH" />
+    <child
+      link="RW_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100" velocity="1000"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+ <joint
+    name="RB_MW_l"
+    type="continuous">
+    <origin
+      xyz="0 0.3 0"
+      rpy="0 0 0" />
+    <parent
+      link="CH" />
+    <child
+      link="MW_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100" velocity="1000"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+  <joint
+    name="FB_FW_r"
+    type="continuous">
+    <origin
+      xyz="0.5 -0.3 0"
+      rpy="0 0 0" />
+    <parent
+      link="CH" />
+    <child
+      link="FW_r" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100" velocity="1000"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+<joint
+    name="FB_FW_l"
+    type="continuous">
+    <origin
+      xyz="0.5 0.3 0"
+      rpy="0 0 0" />
+    <parent
+      link="CH" />
+    <child
+      link="FW_l" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100" velocity="1000"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+
+
+
+<joint
+    name="RB_RW_r"
+    type="continuous">
+    <origin
+      xyz="-0.5 -0.3 0"
+      rpy="0 0 0.0" />
+    <parent
+      link="CH" />
+    <child
+      link="RW_r" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100" velocity="1000"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+
+<joint
+    name="RB_MW_r"
+    type="continuous">
+    <origin
+      xyz="0 -0.3 0"
+      rpy="0 0 0.0" />
+    <parent
+      link="CH" />
+    <child
+      link="MW_r" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100" velocity="1000"/>
+    <joint_properties damping="0.0" friction="0.0"/>
+  </joint>
+
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>FB_FW_l</leftFrontJoint>
+    <rightFrontJoint>FB_FW_r</rightFrontJoint>
+    <leftRearJoint>RB_MW_l</leftRearJoint>
+    <rightRearJoint>RB_MW_r</rightRearJoint>
+    <wheelSeparation>0.7</wheelSeparation>
+    <wheelDiameter>0.30</wheelDiameter>
+    <robotBaseFrame>CH</robotBaseFrame>
+    <torque>1000000</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
+  </plugin>
+</gazebo>
+
+
+
+  <transmission name="RW_F">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FB_FW_r">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_front_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+    <transmission name="LW_F">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FB_FW_l">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_front_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+    <transmission name="RW_R">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RB_RW_r">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="lright_wheel_back_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <transmission name="RW_L">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RB_RW_l">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_back_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <transmission name="RW_M">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RB_MW_r">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="lright_wheel_middle_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+    <transmission name="RW_M">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="RB_MW_l">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_middle_actuator">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+<!-- END -->
+
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/rover</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+</robot>

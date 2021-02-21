@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  
+ <rosparam file="$(find rover_sar)/config/rover.yaml" command="load"/>
+
+  <include file="$(find rover_sar)/launch/empty_world.launch">
+ 
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+  </include>
+
+
+<param name="robot_description" textfile="$(find rover_sar)/urdf/rover.urdf" />
+
+
+  <node
+    name="tf_footprint_base"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0 0 0 0 CH base_footprint 40" />
+  
+
+  <node
+    name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find rover_sar)/urdf/rover.urdf -urdf -model rover" output="screen" />
+  
+
+  <node
+    name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true" />
+
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen"/>
+
+
+
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="rover" args="
+    RW_F_controller
+    LW_F_controller
+    RW_R_controller
+    LW_R_controller
+    RW_M_controller
+    LW_M_controller
+    joint_state_controller"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="use_gui" value="False"/>
+    <remap from="/joint_states" to="/rover/joint_states"/>
+  </node>
+
+</launch>

@@ -1,0 +1,36 @@
+rover:
+    #Publish all joint states
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 100
+
+    #Position controllers
+    RW_F_controller:
+        type: effort_controllers/JointPositionController
+        joint: FB_FW_r
+        pid: {p: 1000.0, i: 1, d: 10.0}
+
+    LW_F_controller:
+        type: effort_controllers/JointPositionController
+        joint: FB_FW_l
+        pid: {p: 1000.0, i: 1, d: 10.0}
+
+    RW_R_controller:
+        type: effort_controllers/JointPositionController
+        joint: RB_RW_r
+        pid: {p: 1000.0, i: 1, d: 10.0}
+
+    LW_R_controller:
+        type: effort_controllers/JointPositionController
+        joint: RB_RW_l
+        pid: {p: 1000.0, i: 1, d: 10.0}
+
+    RW_M_controller:
+        type: effort_controllers/JointPositionController
+        joint: RB_MW_r
+        pid: {p: 1000.0, i: 1, d: 10.0}
+
+    LW_M_controller:
+        type: effort_controllers/JointPositionController
+        joint: RB_MW_l
+        pid: {p: 1000.0, i: 1, d: 10.0}
